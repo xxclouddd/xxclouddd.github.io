@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://xxclouddd.github.io/atom.xml" rel="self"/>
   <link href="http://xxclouddd.github.io/"/>
-  <updated>2016-04-01T17:57:00+08:00</updated>
+  <updated>2016-04-04T17:56:29+08:00</updated>
   <id>http://xxclouddd.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -22,8 +22,203 @@
 layout: post
 title: &ldquo;Aspects源码解读&rdquo;
 date: 2016-04-01 17:44:37 +0800
-comments: true
-ategories:</p>
+comments: true</p>
+
+<h2>ategories:</h2>
+
+<h1>源码解读</h1>
+
+<p>and emial<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x38;&#x32;&#x31;&#56;&#53;&#57;&#x35;&#x35;&#52;&#64;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#x38;&#x32;&#x31;&#56;&#53;&#57;&#x35;&#x35;&#52;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;</a></p>
+
+<hr />
+
+<p>an <a href="www.baidu.com">exapmle</a>
+an <a href="www.baidu.com">example</a></p>
+
+<h1>源码解读 1</h1>
+
+<h2>Header 2</h2>
+
+<ul>
+<li>abacus
+
+<ul>
+<li>answer</li>
+</ul>
+</li>
+</ul>
+
+
+<p>wandan</p>
+
+<blockquote><p>emial-style angle brackedt
+are used for blockquots</p>
+
+<blockquote><p>and, they can be nested</p></blockquote>
+
+<h4>Header in blockquots</h4>
+
+<ul>
+<li>you can quote a list</li>
+<li>Etc</li>
+</ul>
+</blockquote>
+
+<p><code>&lt;code&gt;</code> spans are delimited
+by backticks.</p>
+
+<p>You can include literal backticks
+like <code>`this`</code>.
+&lsquo;<code>&rsquo;
+sdf</p>
+
+<p>|| sdfsdfsf</p>
+
+<hr />
+
+<blockquote><p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.</p>
+
+<p>This is the first level of quoting.</p>
+
+<blockquote><p>This is nested blockquote.</p></blockquote>
+
+<p>Back to the first level.</p>
+
+<h2>这是一个标题。</h2>
+
+<ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+
+
+<p>给出一些例子代码：</p>
+
+<pre><code>return shell_exec("echo $input | $markdown_script");
+</code></pre>
+
+<p>给出一些例子代码：</p>
+
+<pre><code>return shell_exec("echo $input | $markdown_script");
+
+
+
+return shell_exec("echo $input | $markdown_script");
+</code></pre></blockquote>
+
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+
+<ul>
+<li>This is a list item with two paragraphs.</li>
+</ul>
+
+
+<p>This is the second paragraph in the list item. You&rsquo;re
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.</p></li>
+<li><p>Another item in the same list.</p></li>
+<li><p>一列表项包含一个列表区块：</p>
+
+<pre><code>&lt;代码写在这&gt;
+
+wanda
+</code></pre>
+
+<p> wandan</p></li>
+</ul>
+
+
+<p> sd
+      wandan</p>
+
+<pre><code>ssw
+wandan
+KBE3CountButton *button = [_menuView createCountMenuItem];
+button.titleLabel.font = [UIFont systemFontOfSize:14];
+button.tag = access;
+</code></pre>
+
+<p> wabdab</p>
+
+<pre><code>wandan
+wandan
+
+
+
+ wandanwan
+</code></pre>
+
+<p>wandan</p>
+
+<pre><code>wandan</code></pre>
+
+
+
+
+<pre>wandan</pre>
+
+
+<p>Here is an example of AppleScript:</p>
+
+<pre><code>tell application "Foo"
+    beep
+end tell
+
+
+
+&lt;div class="footer"&gt;
+    &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+</code></pre>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<hr />
+
+<hr />
+
+<p><em>single asterisks</em></p>
+
+<p><em>single underscores</em></p>
+
+<p><strong>double asterisks</strong></p>
+
+<p><strong>double underscores</strong></p>
+
+<p>un<em>frigging</em>believable</p>
+
+<p>*this text is surrounded by literal asterisks*</p>
+
+<p>Use the <code>printf()</code> function.</p>
+
+<p>A single backtick in a code span: <code>`</code></p>
+
+<p>A backtick-delimited string in a code span: <code>`foo`</code></p>
+
+<p><font color=#0099ff size=3 face="黑体">color=#0099ff size=72 face=&ldquo;黑体&rdquo;</font></p>
+
+<table><tr><td bgcolor=#7FFFD4>这里的背景色是：Aquamarine，  十六进制颜色值：#7FFFD4， rgb(127, 255, 212)</td></tr></table>
+
+
+<p><img src="http://xxclouddd.github.io/images/email.png" alt="emial" /></p>
+
+<p><code></code> <code>sh
+rake new_post[‘article name’]
+</code> <code></code></p>
 ]]></content>
   </entry>
   
