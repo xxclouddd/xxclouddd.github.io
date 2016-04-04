@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://xxclouddd.github.io/atom.xml" rel="self"/>
   <link href="http://xxclouddd.github.io/"/>
-  <updated>2016-04-04T18:03:15+08:00</updated>
+  <updated>2016-04-04T18:07:44+08:00</updated>
   <id>http://xxclouddd.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[万单]]></title>
+    <link href="http://xxclouddd.github.io/blog/2016/04/04/mo-dan/"/>
+    <updated>2016-04-04T18:07:15+08:00</updated>
+    <id>http://xxclouddd.github.io/blog/2016/04/04/mo-dan</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
 </feed>
