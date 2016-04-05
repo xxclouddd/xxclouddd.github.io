@@ -125,7 +125,7 @@ kbAlertController *alert = [kbAlertController alertControllerWithTitle:@"Title" 
 [self kb_presentFormSheetController:alert animated:YES completion:nil];
 </code></pre>
 
-<p><img src="/source/images/201604060018.png" alt="image1" /></p>
+<p><img src="/source/images/201604060019.png" alt="image1" /></p>
 
 <pre><code>kbCustomAlertController *con = [[kbCustomAlertController alloc] initWithTitle:@"登陆" message:nil];
 
@@ -163,7 +163,7 @@ kbAlertController *alert = [kbAlertController alertControllerWithController:con]
 + (void)toast:(nullable NSString *)toast duration:(NSTimeInterval)duration completionHandle:(void(^ __nullable)())completionHandle;
 </code></pre>
 
-<h2>Networking</h2>
+<h2>Network:</h2>
 
 <p>接口组织是离散型的，一个接口对应一个类，所有类都必须继承KBAutoRefreshSessionAPIManager，还有实现KBAPIManager, KBAPIManagerValidator俩个代理</p>
 

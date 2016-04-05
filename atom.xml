@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://xxclouddd.github.io/atom.xml" rel="self"/>
   <link href="http://xxclouddd.github.io/"/>
-  <updated>2016-04-06T00:51:29+08:00</updated>
+  <updated>2016-04-06T00:59:18+08:00</updated>
   <id>http://xxclouddd.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -59,7 +59,7 @@ kbAlertController *alert = [kbAlertController alertControllerWithTitle:@"Title" 
 [self kb_presentFormSheetController:alert animated:YES completion:nil];
 </code></pre>
 
-<p><img src="http://xxclouddd.github.io/source/images/201604060018.png" alt="image1" /></p>
+<p><img src="http://xxclouddd.github.io/source/images/201604060019.png" alt="image1" /></p>
 
 <pre><code>kbCustomAlertController *con = [[kbCustomAlertController alloc] initWithTitle:@"登陆" message:nil];
 
@@ -97,7 +97,7 @@ kbAlertController *alert = [kbAlertController alertControllerWithController:con]
 + (void)toast:(nullable NSString *)toast duration:(NSTimeInterval)duration completionHandle:(void(^ __nullable)())completionHandle;
 </code></pre>
 
-<h2>Networking</h2>
+<h2>Network:</h2>
 
 <p>接口组织是离散型的，一个接口对应一个类，所有类都必须继承KBAutoRefreshSessionAPIManager，还有实现KBAPIManager, KBAPIManagerValidator俩个代理</p>
 
