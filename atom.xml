@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://xxclouddd.github.io/atom.xml" rel="self"/>
   <link href="http://xxclouddd.github.io/"/>
-  <updated>2016-04-04T18:07:44+08:00</updated>
+  <updated>2016-04-06T00:48:06+08:00</updated>
   <id>http://xxclouddd.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,11 +14,164 @@
 
   
   <entry>
-    <title type="html"><![CDATA[万单]]></title>
-    <link href="http://xxclouddd.github.io/blog/2016/04/04/mo-dan/"/>
-    <updated>2016-04-04T18:07:15+08:00</updated>
-    <id>http://xxclouddd.github.io/blog/2016/04/04/mo-dan</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[快递员基础组件的使用]]></title>
+    <link href="http://xxclouddd.github.io/blog/2016/04/05/kuai-di-yuan-ji-chu-zu-jian-de-shi-yong/"/>
+    <updated>2016-04-05T23:04:04+08:00</updated>
+    <id>http://xxclouddd.github.io/blog/2016/04/05/kuai-di-yuan-ji-chu-zu-jian-de-shi-yong</id>
+    <content type="html"><![CDATA[<h2>UI:</h2>
+
+<h3>KBFormSheetController</h3>
+
+<p><img src="http://xxclouddd.github.io/source/images/201604051128.PNG" alt="image1" /></p>
+
+<pre><code>KBSignTypeSelectController *controller = [[KBSignTypeSelectController alloc] initWithNibName:@"KBSignTypeSelectController" bundle:nil];
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+nav.navigationBarHidden = YES;
+
+KBFormSheetController *formSheetController = [[KBFormSheetController alloc] initWithSize:contentSize viewController:nav];
+formSheetController.shouldDismissOnBackgroundViewTap = NO;
+formSheetController.movementWhenKeyboardAppears = KBFormSheetWhenKeyboardAppearsMoveAboveKeyboard;
+formSheetController.formSheetKeyboardMargin = -44;
+[self kb_presentFormSheetController:formSheetController animated:YES completion:^{}];
+</code></pre>
+
+<hr />
+
+<pre><code>[[KBFormSheetController appearance] setShouldDismissOnBackgroundViewTap:NO];
+[[KBFormSheetController appearance] setShadowRadius:2.0];
+[[KBFormSheetController appearance] setCornerRadius:4.0];
+[[KBFormSheetController appearance] setMovementWhenKeyboardAppears:KBFormSheetWhenKeyboardAppearsCenterVertically];
+</code></pre>
+
+<h3>kbAlertController</h3>
+
+<p><img src="http://xxclouddd.github.io/source/images/201604060001.PNG" alt="image1" /></p>
+
+<pre><code>kbAlertAction *cancel = [kbAlertAction actionWithTitle:@"cancel" style:kbAlertActionStyleCancel handle:nil];
+kbAlertAction *destructive = [kbAlertAction actionWithTitle:@"destructive" style:kbAlertActionStyleDestructive handle:^(kbAlertAction * _Nonnull action) {
+    NSLog(@"destructive");
+}];
+kbAlertAction *confirm = [kbAlertAction actionWithTitle:@"confirm" style:kbAlertActionStyleDefault handle:^(kbAlertAction * _Nonnull action) {
+    NSLog(@"confirm");
+}];
+
+kbAlertController *alert = [kbAlertController alertControllerWithTitle:@"Title" message:@"message" actions:@[cancel, destructive, confirm]];
+[self kb_presentFormSheetController:alert animated:YES completion:nil];
+</code></pre>
+
+<p><img src="http://xxclouddd.github.io/source/images/201604060018.PNG" alt="image1" /></p>
+
+<pre><code>kbCustomAlertController *con = [[kbCustomAlertController alloc] initWithTitle:@"登陆" message:nil];
+
+UILabel *label = [UILabel new];
+label.font = [UIFont systemFontOfSize:10];
+label.frame = CGRectMake(0, 0, 230, 15);
+label.text = @"some message!";
+label.textColor = [UIColor redColor];
+
+[con addView:label];
+
+[con addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+    textField.placeholder = @"请输入账户";
+}];
+[con addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+    textField.placeholder = @"请输入密码";
+}];
+[con addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+
+}];
+
+[con addAction:[kbAlertAction actionWithTitle:@"提交" style:kbAlertActionStyleDefault handle:^(kbAlertAction * _Nonnull action) {
+    NSLog(@"upload");
+}]];
+
+kbAlertController *alert = [kbAlertController alertControllerWithController:con];
+[self kb_presentFormSheetController:alert animated:YES completion:nil];
+</code></pre>
+
+<h3>Toast</h3>
+
+<pre><code>kToast(@"请先扫描数据"); 
++ (void)toast:(nullable NSString *)toast;
++ (void)toast:(nullable NSString *)toast duration:(NSTimeInterval)duration;
++ (void)toast:(nullable NSString *)toast duration:(NSTimeInterval)duration completionHandle:(void(^ __nullable)())completionHandle;
+</code></pre>
+
+<h2>Networking</h2>
+
+<p>接口组织是离散型的，一个接口对应一个类，所有类都必须继承KBAutoRefreshSessionAPIManager，还有实现KBAPIManager, KBAPIManagerValidator俩个代理</p>
+
+<pre><code>@protocol KBAPIManager &lt;NSObject&gt;
+@required
+- (NSString *)methodName;
+- (NSString *)serviceType;
+- (KBAPIManagerRequestType)requestType;
+
+@optional
+- (BOOL)shouldCache;
+
+@end
+
+@protocol KBAPIManagerValidator &lt;NSObject&gt;
+@optional
+- (KBValidatorType)validatorType;
+- (KBValidator *)manager:(KBAPIBaseManager *)manager task:(KBAPIManagerTask *)task callBackData:(id)data;
+
+@end
+</code></pre>
+
+<hr />
+
+<pre><code>- (void)getTimeingList:(void (^)(NSArray&lt;KBTimeingSendItem *&gt; * _Nullable, NSError * _Nullable))completion
+{
+    NSDictionary *params = @{@"role": @"courier"};
+
+    [self loadDataWithParams:params success:^(KBAPIManagerTask *task, NSDictionary *responseObject) {
+    NSDictionary *data1 = [responseObject[@"data"] safeCastForClass:[NSDictionary class]];
+    NSArray *data = [data1[@"data"] safeCastForClass:[NSArray class]];
+
+    NSMutableArray *container = [NSMutableArray array];
+    for (NSDictionary *dic in data) {
+        if (![dic isKindOfClass:[NSDictionary class]]) {
+            continue;
+        }
+
+        KBTimeingSendItem *item = [[KBTimeingSendItem alloc] initWithDictionary:dic error:NULL];
+        if (item &amp;&amp; item.identifier != nil) {
+            [container addObject:item];
+        }
+    }
+
+    completion ? completion(container, nil) : nil;
+
+} failure:^(KBAPIManagerTask *task, id responseObject, NSError *error) {
+    completion ? completion(nil, error) : nil;
+}];
+}
+
+#pragma mark - KBAPIManager
+
+- (NSString *)methodName
+{
+    return @"/v1/inform_user/get_timing_list";
+}
+
+- (NSString *)serviceType
+{
+    return kKBServiceV3;
+}
+
+ - (KBAPIManagerRequestType)requestType
+{
+    return KBAPIManagerRequestTypePost;
+}
+
+#pragma mark - KBAPIManagerValidator
+- (KBValidatorType)validatorType
+{
+    return KBValidatorTypeValue2;
+}
+</code></pre>
 ]]></content>
   </entry>
   
