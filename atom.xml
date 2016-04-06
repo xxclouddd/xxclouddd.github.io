@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://xxclouddd.github.io/atom.xml" rel="self"/>
   <link href="http://xxclouddd.github.io/"/>
-  <updated>2016-04-06T09:45:52+08:00</updated>
+  <updated>2016-04-06T09:49:34+08:00</updated>
   <id>http://xxclouddd.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -22,7 +22,7 @@
 
 <h3>KBFormSheetController</h3>
 
-<p><img src="http://xxclouddd.github.io/source/images/email.png" alt="image1" /></p>
+<p><img src="http://xxclouddd.github.io/source/images/email.png" alt="email" /></p>
 
 <pre><code>KBSignTypeSelectController *controller = [[KBSignTypeSelectController alloc] initWithNibName:@"KBSignTypeSelectController" bundle:nil];
 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
